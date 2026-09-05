@@ -1,0 +1,6 @@
+{
+  "name": "Songs That Remind Me of You",
+  "description": "A romantic, mobile-first surprise musical keepsake featuring favorite songs, synchronized lyrics, and hand-drawn pencil sketches.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

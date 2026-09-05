@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+  .font-romantic {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Frosted Glass linear gradient background */
+.frosted-bg {
+  background: linear-gradient(135deg, #FDFBF7 0%, #FFE4E1 50%, #E6E6FA 100%);
+  background-attachment: fixed;
+}
+
+/* Frosted glass container */
+.frosted-glass-card {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/* Frosted glass sub-container / pill */
+.frosted-glass-item {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+/* Real-time pencil drawing stroke animation for every sentence */
+@keyframes pencilStrokeDraw {
+  0% {
+    stroke-dashoffset: 1200;
+    opacity: 0.1;
+  }
+  15% {
+    opacity: 1;
+  }
+  90% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes washFillIn {
+  0% {
+    fill-opacity: 0;
+  }
+  50% {
+    fill-opacity: 0.15;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+.sketch-animated path,
+.sketch-animated circle,
+.sketch-animated rect,
+.sketch-animated line,
+.sketch-animated polyline,
+.sketch-animated polygon {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: pencilStrokeDraw 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards, washFillIn 2.6s ease-out forwards;
+}
+
+/* Hide scrollbars for ultra-clean aesthetic */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
